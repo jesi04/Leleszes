@@ -11,6 +11,7 @@ public class HalConfiguration {
     public HalConfiguration(HalProperty halProperty) {
         this.halProperty = halProperty;
         System.out.println(halProperty.getSize());
+
     }
 
 

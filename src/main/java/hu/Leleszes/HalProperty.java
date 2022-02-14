@@ -13,15 +13,21 @@ import org.springframework.validation.annotation.Validated;
 @PropertySource(value = "classpath:application.properties", encoding = "utf-8")
 @ConfigurationProperties(prefix = "fish")
 public class HalProperty {
-    private @Getter @Setter int size;
+    private @Getter int size;
 
 
     /*
     public int getSize() {
         return size;
-    }
+    }*/
 
     public void setSize(int size) {
-        this.size = size;
-    }*/
+
+        if (this.size < 10 || size > 100 ){
+            throw new IllegalArgumentException();
+        }else {
+            this.size=size;
+        }
+
+    }
 }
